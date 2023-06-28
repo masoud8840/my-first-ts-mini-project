@@ -1,0 +1,55 @@
+:root {
+  --border-color: #e2e2e2;
+
+  // Radius
+  --rd-sm: 3px;
+  --rd-md: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 400 14px "Poppins";
+}
+body {
+  background-color: #f1f1f1;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 50px 0;
+  .card {
+    box-shadow: 0 8px 12px 0 #e9e9e9;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: var(--rd-md);
+  }
+  .todo-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    button {
+      max-width: 180px;
+    }
+    input {
+    }
+  }
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--rd-sm);
+  outline: 0;
+  &:focus {
+    box-shadow: inset 0 0 7px 3px var(--border-color);
+  }
+}
+
+button {
+  background-color: transparent;
+}
