@@ -1,6 +1,8 @@
 :root {
+  --text: #333333;
   --border-color: #e2e2e2;
 
+  --placeholder-color: #b2b2b2;
   // Radius
   --rd-sm: 3px;
   --rd-md: 5px;
@@ -10,7 +12,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: 400 14px "Poppins";
+  font: 300 15px "Poppins";
+  color: var(--text);
 }
 body {
   background-color: #f1f1f1;
@@ -32,8 +35,14 @@ body {
     gap: 15px;
     button {
       max-width: 180px;
+      font-weight: 500;
     }
     input {
+      font-weight: 500;
+      &::placeholder {
+        color: var(--placeholder-color);
+        font-weight: 300;
+      }
     }
   }
 }
