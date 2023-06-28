@@ -29,6 +29,7 @@ body {
     border-radius: var(--rd-md);
   }
   .todo-form {
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,6 +37,15 @@ body {
     button {
       max-width: 180px;
       font-weight: 500;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--rd-sm);
+      outline: 0;
+      background-color: transparent;
+      &:active {
+        box-shadow: inset 0 0 7px 3px var(--border-color);
+      }
     }
     input {
       font-weight: 500;
@@ -47,8 +57,27 @@ body {
   }
 }
 
-input,
-button {
+.todo-list {
+  h3 {
+    font: 400 24px "Poppins";
+    text-align: center;
+  }
+  ul {
+    list-style-position: inside;
+    li {
+      list-style-type: decimal-leading-zero;
+      font-weight: 400;
+      button {
+        margin-left: 5px;
+        border: 0;
+        background-color: transparent;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+input {
   width: 100%;
   padding: 10px;
   border: 1px solid var(--border-color);
@@ -58,7 +87,6 @@ button {
     box-shadow: inset 0 0 7px 3px var(--border-color);
   }
 }
-
 button {
-  background-color: transparent;
+  cursor: pointer;
 }
