@@ -13,6 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   font: 300 15px "Poppins";
+  line-height: 22.5px;
   color: var(--text);
 }
 body {
@@ -59,16 +60,21 @@ body {
 
 .todo-list {
   h3 {
-    font: 400 24px "Poppins";
+    font: 400 18px "Poppins";
     text-align: center;
+    padding: 30px;
+    line-height: 27px;
   }
   ul {
     list-style-position: inside;
     li {
-      list-style-type: decimal-leading-zero;
+      list-style-type: circle;
       font-weight: 400;
+      span {
+        font-weight: 500;
+      }
       button {
-        margin-left: 5px;
+        text-align: left;
         border: 0;
         background-color: transparent;
         font-weight: 500;
@@ -89,4 +95,10 @@ input {
 }
 button {
   cursor: pointer;
+}
+[data-visibility="true"] {
+  display: block;
+}
+[data-visibility="false"] {
+  display: none;
 }
