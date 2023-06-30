@@ -1,3 +1,4 @@
+import DoTodo from "./doTodo";
 import Todos from "./todos";
 
 export default function RefreshTodos() {
@@ -5,7 +6,7 @@ export default function RefreshTodos() {
     ".todo-list-inner"
   )! as HTMLUListElement;
   listContainer.textContent = "";
-  
+
   // The list is loading
   const loadingListSign = document.querySelector(
     ".loading-list-sign"
@@ -17,7 +18,9 @@ export default function RefreshTodos() {
     li.id = `todo-${index}`;
     const button = document.createElement("button");
     button.textContent = todo.text;
-    button.classList.add(`status-${todo.status}`);
+
+    button.className = `status-${todo.status}`;
+    button.addEventListener("click", DoTodo(todo.id));
 
     li.appendChild(button);
     listContainer.appendChild(li);

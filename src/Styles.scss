@@ -1,5 +1,6 @@
 :root {
   --text: #333333;
+  --white-text: #a9a9a9;
   --border-color: #e2e2e2;
 
   --placeholder-color: #b2b2b2;
@@ -78,6 +79,10 @@ body {
         border: 0;
         background-color: transparent;
         font-weight: 500;
+        &.status-done {
+          color: var(--white-text);
+          text-decoration: line-through;
+        }
       }
     }
   }
