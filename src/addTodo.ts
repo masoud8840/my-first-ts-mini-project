@@ -1,4 +1,4 @@
-import Todos from "./todos";
+import {Todos} from "./todos";
 import Todo from "./todoInterface";
 import RefreshTodos from "./refreshTodos";
 

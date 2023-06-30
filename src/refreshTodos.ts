@@ -1,5 +1,5 @@
 import DoTodo from "./doTodo";
-import Todos from "./todos";
+import { Todos } from "./todos";
 
 export default function RefreshTodos() {
   const listContainer = document.querySelector(

@@ -1,5 +1,6 @@
+import DeleteTodo from "./deleteTodo";
 import RefreshTodos from "./refreshTodos";
-import Todos from "./todos";
+import { Todos } from "./todos";
 
 export default function DoTodo(updatedTodoStatusId: number) {
   return function () {
@@ -13,5 +14,6 @@ export default function DoTodo(updatedTodoStatusId: number) {
       }
     });
     RefreshTodos();
+    DeleteTodo(updatedTodoStatusId);
   };
 }
