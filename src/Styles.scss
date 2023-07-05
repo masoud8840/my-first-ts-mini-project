@@ -49,7 +49,7 @@ body {
         box-shadow: inset 0 0 7px 3px var(--border-color);
       }
     }
-    input {
+    input[type="text"] {
       font-weight: 500;
       &::placeholder {
         color: var(--placeholder-color);
@@ -67,28 +67,40 @@ body {
     line-height: 27px;
   }
   ul {
-    list-style-position: inside;
+    display: grid;
+    gap: 10px;
     li {
-      list-style-type: circle;
-      font-weight: 400;
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       span {
         font-weight: 500;
       }
-      button {
-        text-align: left;
-        border: 0;
-        background-color: transparent;
-        font-weight: 500;
-        &.status-done {
-          color: var(--white-text);
-          text-decoration: line-through;
+      input[type="checkbox"] {
+        position: relative;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border-radius: var(--rd-sm);
+        border: 1px solid var(--border-color);
+        background-color: white;
+        &:checked {
+          &::after {
+            content: "\2713";
+            position: absolute;
+            left: 60%;
+            transform: translateX(-50%) rotateZ(4deg);
+            top: -5px;
+            font-size: 24px;
+          }
         }
       }
     }
   }
 }
 
-input {
+input[type="text"] {
   width: 100%;
   padding: 10px;
   border: 1px solid var(--border-color);

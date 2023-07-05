@@ -1,5 +1,5 @@
 import "./Styles.scss";
-import AddTodo from "./addTodo";
+import { CTodo } from "./Todo";
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 <section class="container">
   <form class="card todo-form">
@@ -14,5 +14,12 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
 </section>  
 `;
 
-const form = document.querySelector("form")!;
-form.addEventListener("submit", AddTodo);
+const app = new CTodo();
+app.Load();
+
+const form = document.querySelector(".todo-form")! as HTMLFormElement;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  app.Add();
+});
+
