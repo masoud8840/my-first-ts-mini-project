@@ -7,6 +7,7 @@ interface ITodo {
 }
 
 export class CTodo {
+  emptyListSign = document.querySelector("h3")!;
   listContainer = document.querySelector(
     ".todo-list-inner"
   )! as HTMLUListElement;
@@ -27,18 +28,26 @@ export class CTodo {
     this.RefreshDOM();
   }
   Add() {
+    if (this.input.value.trim() === "") return;
+    
     const newTodo: ITodo = {
       id: uuidV4(),
       title: this.input.value,
       completed: false,
       addedDate: new Date(),
     };
+
     this.Todos.push(newTodo);
+    this.input.value = "";
     this.Save();
     this.RefreshDOM();
   }
   RefreshDOM() {
     this.listContainer.textContent = "";
+
+    if (this.Todos.length > 0) {
+      this.emptyListSign.style.display = "none";
+    }
 
     this.Todos.map((todo, index) => {
       const li = document.createElement("li");
